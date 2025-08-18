@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags - Reemplazar con contenido real -->
+    <title>MILK BOX Studio</title>
+    <meta name="description" content="{{META_DESC}}">
+    <meta name="keywords" content="doblaje, locución, estudio, voz, producción">
+    
+    <!-- Favicon - Reemplazar URL -->
+    <link rel="icon" href="{{FAVICON_URL}}" type="image/x-icon">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Loader Overlay - AGREGAR ESTO -->
+    <div class="loader-overlay" id="loaderOverlay">
+        <!-- Partículas de código -->
+        <div class="code-particles" id="codeParticles"></div>
+        
+        <!-- Texto principal -->
+        <div class="developer-text">
+            <div class="text-wrapper typing-text">
+                &lt;Developer Alexander&gt;
+            </div>
+        </div>
+        
+        <!-- Loading dots -->
+        <div class="loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <!-- Progress bar -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <!-- FIN DEL LOADER -->
+
+    <!-- Navbar fija -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container">
+            <!-- Logo - Reemplazar URL e imagen -->
+            <a class="navbar-brand" href="#inicio">
+            <img src="assets/images/logo.png" alt="MILK BOX Studio" class="navbar-logo">
+            <span class="logo-separator">|</span>
+            </a>
+            
+            <!-- Toggle button para móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <div class="hero-content fade-in">
+                        <!-- Título principal - Reemplazar con máximo 8 palabras -->
+                        <h1 class="hero-title">MILK BOX</h1>
+                        
+                        <!-- Subtítulo - Reemplazar con frase clara -->
+                        <p class="hero-subtitle">Studio</p>
+                        
+                        <!-- Botón principal - Reemplazar URL de WhatsApp -->
+                        <a href="https://wa.me/51TUNUMERO?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" class="btn btn-primary btn-cta pulse-animation" target="_blank">
+                            <i class="fas fa-quote-left me-2"></i>
+                            Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decoración sutil de fondo -->
+        <div class="hero-decoration"></div>
+        
+        <!-- Reflejos de luz tipo estudio -->
+        <div class="studio-lights">
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <div class="col-12 text-center mb-2">
+                    <h2 class="section-title fade-in">Nuestro Portfolio</h2>
+                    <p class="section-subtitle fade-in">Escucha la calidad de nuestro trabajo</p>
+                </div>
+            </div>
+            
+            <!-- Ecualizador separador -->
+            <div class="equalizer-separator">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Video Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-card fade-in">
+                        <div class="video-container">
+                            <!-- Video 1 - Reemplazar poster y source -->
+                            <video class="w-100" 
+                                   poster="assets/images/thumbl/Sin título.png" 
+                                   controls 
+                                   playsinline 
+                                   preload="metadata"
+                                   controlslist="nodownload noremoteplayback"
+                                   disablepictureinpicture>
+                                <source src="assets/videos/video1.mp4" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <!-- Título y descripción del video 1 - Reemplazar -->
+                            <h4>Demo Anime</h4>
+                            <p>Narración de personaje</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-card fade-in">
+                        <div class="video-container">
+                            <!-- Video 2 - Reemplazar poster y source -->
+                            <video class="w-100" 
+                                   poster="{{VIDEO_2_POSTER}}" 
+                                   controls 
+                                   playsinline 
+                                   preload="metadata"
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   disablepictureinpicture>
+                                <source src="{{VIDEO_2_SRC}}" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <!-- Título y descripción del video 2 - Reemplazar -->
+                            <h4>{{VIDEO_2_TITLE}}</h4>
+                            <p>{{VIDEO_2_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="video-card fade-in">
+                        <div class="video-container">
+                            <!-- Video 3 - Reemplazar poster y source -->
+                            <video class="w-100" 
+                                   poster="{{VIDEO_3_POSTER}}" 
+                                   controls 
+                                   playsinline 
+                                   preload="metadata"
+                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                   disablepictureinpicture>
+                                <source src="{{VIDEO_3_SRC}}" type="video/mp4">
+                                Tu navegador no soporta videos HTML5.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <!-- Título y descripción del video 3 - Reemplazar -->
+                            <h4>{{VIDEO_3_TITLE}}</h4>
+                            <p>{{VIDEO_3_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title fade-in">Nuestros Servicios</h2>
+                    <p class="section-subtitle fade-in">Soluciones completas en audio y voz</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                                
+                <!-- Servicio 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center fade-in">
+                        <div class="service-icon float-animation">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <!-- Título y descripción del servicio 1 - Reemplazar -->
+                        <h4>Doblaje y Locución Profesional</h4>
+                        <p>Voces auténticas en español latino para videos, animaciones, videojuegos y contenido audiovisual.</p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center fade-in">
+                        <div class="service-icon float-animation">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <!-- Título y descripción del servicio 2 - Reemplazar -->
+                        <h4>Voice Over para Publicidad y Redes</h4>
+                        <p>Grabaciones de voz claras y expresivas para comerciales, reels, podcasts y material promocional.</p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center fade-in">
+                        <div class="service-icon float-animation">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <!-- Título y descripción del servicio 3 - Reemplazar -->
+                        <h4>Edición Básica de Video y Audio</h4>
+                        <p>Edición clara y funcional de video, ajustes de audio y sincronización de doblaje para proyectos accesibles y efectivos.</p>
+                    </div>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-card text-center fade-in">
+                        <div class="service-icon float-animation">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <!-- Título y descripción del servicio 4 - Reemplazar -->
+                        <h4>Producción Audiovisual Integral</h4>
+                        <p>Apoyo completo en proyectos creativos: desde la idea hasta el producto final, con calidad y estilo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="testimonial-card text-center fade-in">
+                        <i class="fas fa-quote-left testimonial-quote"></i>
+                        <!-- Testimonio - Reemplazar texto y autor -->
+                        <blockquote class="testimonial-text">
+                            "{{QUOTE_TEXT}}"
+                        </blockquote>
+                        <cite class="testimonial-author">— {{QUOTE_AUTHOR}}</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title fade-in">Contacto</h2>
+                    <p class="section-subtitle fade-in">¿Listo para darle voz a tu proyecto?</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-buttons text-center mb-5 fade-in">
+                        <!-- Botón Facebook -->
+                        <a href="TU_URL_DE_FACEBOOK" class="btn btn-facebook me-3 mb-3" target="_blank">
+                            <i class="fab fa-facebook me-2"></i>
+                            Facebook
+                        </a>
+                        <!-- Botón WhatsApp -->
+                        <a href="TU_NUMERO_DE_WHATSAPP" class="btn btn-whatsapp mb-3" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <p class="mb-0">&copy; 2024 MILK BOX Studio. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p class="mb-0 developer-credit">Desarrollado por <strong>AlexanderDev</strong></p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <div class="social-links">
+                        <!-- Enlaces sociales - Reemplazar URLs -->
+                        <a href="TU_URL_DE_FACEBOOK" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

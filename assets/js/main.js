@@ -75,6 +75,87 @@ document.addEventListener('DOMContentLoaded', function() {
     hideLoader();
 });
 
+// ==========================================================================
+// CÍRCULO HOLOGRÁFICO SEGUIDOR DE CURSOR
+// ==========================================================================
+
+/**
+ * Crear y controlar círculo holográfico
+ */
+function createHolographicCircle() {
+    // Solo en la sección hero
+    const heroSection = $('.hero-section');
+    if (heroSection.length === 0) return;
+    
+    const circle = $('<div class="holographic-circle"></div>');
+    $('body').append(circle);
+    
+    // Detectar si es móvil
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Modo ping-pong para móvil
+        circle.addClass('mobile-pingpong');
+        
+        // Posicionar dentro de la sección hero
+        circle.css({
+            'top': heroSection.offset().top + 20 + 'px',
+            'left': '20px'
+        });
+    } else {
+        // Modo seguimiento de cursor para desktop
+        let mouseX = 0;
+        let mouseY = 0;
+        let circleX = 0;
+        let circleY = 0;
+        
+        // Actualizar posición del mouse
+        $(document).mousemove(function(e) {
+            const heroRect = heroSection[0].getBoundingClientRect();
+            
+            // Solo seguir el cursor cuando esté sobre la sección hero
+            if (e.clientY >= heroRect.top && e.clientY <= heroRect.bottom) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            }
+        });
+        
+        // Animación suave de seguimiento
+        function animateCircle() {
+            const dx = mouseX - circleX;
+            const dy = mouseY - circleY;
+            
+            circleX += dx * 0.1; // Factor de suavidad
+            circleY += dy * 0.1;
+            
+            circle.css({
+                'left': circleX - 10 + 'px', // Centrar el círculo
+                'top': circleY - 10 + 'px'
+            });
+            
+            requestAnimationFrame(animateCircle);
+        }
+        
+        // Inicializar en el centro de la pantalla
+        circleX = window.innerWidth / 2;
+        circleY = window.innerHeight / 2;
+        
+        animateCircle();
+    }
+    
+    // Limpiar al cambiar de sección
+    $(window).scroll(function() {
+        const heroRect = heroSection[0].getBoundingClientRect();
+        
+        if (heroRect.bottom < 0) {
+            // Hero section no visible, ocultar círculo
+            circle.fadeOut(300);
+        } else if (heroRect.top < window.innerHeight) {
+            // Hero section visible, mostrar círculo
+            circle.fadeIn(300);
+        }
+    });
+}
 
 $(document).ready(function() {
     
@@ -276,6 +357,62 @@ $(document).ready(function() {
             $(this).removeClass('hovered');
         }
     );
+
+/**
+ * Efectos hover mejorados con animaciones fluidas
+ */
+$('.video-card, .service-card').hover(
+    function() {
+        // Mouse enter
+        $(this).addClass('hovered');
+        $(this).css({
+            'transform': 'translateY(-10px) scale(1.02)',
+            'box-shadow': 'var(--shadow-strong)',
+            'background': 'linear-gradient(135deg, white 0%, #faf0e6 100%)'
+        });
+        
+        // Agregar partículas al hover
+        createHoverSparkles($(this));
+    },
+    function() {
+        // Mouse leave
+        $(this).removeClass('hovered');
+        $(this).css({
+            'transform': 'translateY(0) scale(1)',
+            'box-shadow': 'var(--shadow-soft)',
+            'background': 'white'
+        });
+    }
+);
+
+/**
+ * Crear destellos al hacer hover
+ */
+function createHoverSparkles(element) {
+    for (let i = 0; i < 3; i++) {
+        const sparkle = $('<div class="hover-sparkle"></div>');
+        const rect = element[0].getBoundingClientRect();
+        const x = Math.random() * rect.width;
+        const y = Math.random() * rect.height;
+        
+        sparkle.css({
+            'position': 'absolute',
+            'left': x + 'px',
+            'top': y + 'px',
+            'width': '4px',
+            'height': '4px',
+            'background': '#d4af37',
+            'border-radius': '50%',
+            'z-index': '10',
+            'pointer-events': 'none',
+            'animation': 'sparkle 0.8s ease-out forwards'
+        });
+        
+        element.css('position', 'relative').append(sparkle);
+        
+        setTimeout(() => sparkle.remove(), 800);
+    }
+}
     
     /**
      * Pausar videos cuando no están visibles (optimización)
@@ -370,6 +507,11 @@ $(document).ready(function() {
     $(window).resize(function() {
         // Recalcular alturas si es necesario
         adjustVideoContainers();
+
+        // Recrear círculo holográfico si cambia el tipo de dispositivo
+        $('.holographic-circle').remove();
+        createHolographicCircle();
+
     });
     
     /**
@@ -701,4 +843,97 @@ window.addEventListener('unhandledrejection', function(event) {
     
     // En producción, enviar a servicio de logging
     // CAMBIAR: Implementar con tu servicio de error tracking
+});
+
+// ==========================================================================
+// PARTÍCULAS DORADAS FLOTANTES
+// ==========================================================================
+
+/**
+ * Crear partículas doradas que flotan por toda la página
+ */
+function createGoldenParticles() {
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        setTimeout(() => {
+            const particle = $('<div class="golden-particle"></div>');
+            const size = Math.random() * 6 + 4; // 4-10px
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight + 20;
+            const duration = Math.random() * 15 + 20; // 20-35 segundos
+            const delay = Math.random() * 5000;
+            
+            particle.css({
+                'position': 'fixed',
+                'width': size + 'px',
+                'height': size + 'px',
+                'background': 'radial-gradient(circle, #d4af37 0%, #ff7043 100%)',
+                'border-radius': '50%',
+                'left': startX + 'px',
+                'top': startY + 'px',
+                'z-index': '1',
+                'pointer-events': 'none',
+                'opacity': '0.7',
+                'animation': `goldenFloat ${duration}s ease-in-out ${delay}ms infinite`,
+                'box-shadow': '0 0 10px rgba(212, 175, 55, 0.5)'
+            });
+            
+            $('body').append(particle);
+            
+            // Remover después del ciclo completo
+            setTimeout(() => {
+                particle.remove();
+            }, duration * 1000 + delay);
+        }, i * 2000); // Escalonar creación
+    }
+}
+
+// Inicializar partículas doradas
+$(document).ready(function() {
+    createGoldenParticles();
+    
+    // Renovar partículas cada 30 segundos
+    setInterval(createGoldenParticles, 30000);
+
+    // ==========================================================================
+    // PARTÍCULAS DECORATIVAS EN NAVBAR
+    // ==========================================================================
+
+    function createNavbarParticles() {
+        const navbarParticles = document.getElementById('navbarParticles');
+        if (!navbarParticles) return;
+        
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'navbar-particle';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            
+            navbarParticles.appendChild(particle);
+            
+            // Remover después de la animación
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 10000);
+        }
+        
+        // Crear partícula cada 3 segundos
+        setInterval(createParticle, 3000);
+        
+        // Crear algunas partículas iniciales
+        for (let i = 0; i < 3; i++) {
+            setTimeout(createParticle, i * 1000);
+        }
+    }
+
+    // Inicializar partículas de navbar
+    createNavbarParticles();
+
+    // Inicializar círculo holográfico
+    createHolographicCircle();
+
 });

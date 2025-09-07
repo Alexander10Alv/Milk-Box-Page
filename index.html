@@ -55,12 +55,9 @@
     <!-- Navbar fija -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
         <div class="container">
-            <!-- Logo - Reemplazar URL e imagen -->
-            <a class="navbar-brand" href="#inicio">
-            <img src="assets/images/Logo.png" alt="MILK BOX Studio" class="navbar-logo">
-            <span class="logo-separator">|</span>
-            </a>
-            
+
+            <div class="navbar-particles" id="navbarParticles"></div>
+                        
             <!-- Toggle button para móvil -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -84,6 +81,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
+                    <li class="nav-separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link whatsapp-nav-btn" href="https://wa.me/51960906717?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -95,6 +98,11 @@
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
                     <div class="hero-content fade-in">
+                        
+                        <div class="hero-logo-container">
+                            <img src="assets/images/Logov5.png" alt="MILK BOX Studio" class="hero-logo">
+                        </div>
+
                         <!-- Título principal - Reemplazar con máximo 8 palabras -->
                         <h1 class="hero-title">MILK BOX</h1>
                         
@@ -133,19 +141,8 @@
                 </div>
             </div>
             
-            <!-- Ecualizador separador -->
-            <div class="equalizer-separator">
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-                <div class="eq-bar"></div>
-            </div>
 
-            <div class="row g-4">
+            <div class="row g-4" style="margin-top: -30px;">
                 <!-- Video Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="video-card fade-in">
@@ -231,53 +228,56 @@
                 </div>
             </div>
             
-            <div class="row g-4">
-                                
-                <!-- Servicio 1 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center fade-in">
-                        <div class="service-icon float-animation">
-                            <i class="fas fa-microphone"></i>
+            <div class="row">
+                <!-- Servicio 1 - Layout horizontal -->
+                <div class="col-12">
+                    <div class="service-item fade-in">
+                        <div class="service-icon-container">
+                            <i class="fas fa-microphone service-new-icon"></i>
                         </div>
-                        <!-- Título y descripción del servicio 1 - Reemplazar -->
-                        <h4>Doblaje y Locución Profesional</h4>
-                        <p>Voces auténticas en español latino para videos, animaciones, videojuegos y contenido audiovisual.</p>
+                        <div class="service-content">
+                            <h4>Doblaje y Locución Profesional</h4>
+                            <p>Voces auténticas en español latino para videos, animaciones, videojuegos y contenido audiovisual con la más alta calidad técnica.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Servicio 2 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center fade-in">
-                        <div class="service-icon float-animation">
-                            <i class="fas fa-broadcast-tower"></i>
+                <!-- Servicio 2 - Layout horizontal inverso -->
+                <div class="col-12">
+                    <div class="service-item fade-in">
+                        <div class="service-icon-container">
+                            <i class="fas fa-broadcast-tower service-new-icon"></i>
                         </div>
-                        <!-- Título y descripción del servicio 2 - Reemplazar -->
-                        <h4>Voice Over para Publicidad y Redes</h4>
-                        <p>Grabaciones de voz claras y expresivas para comerciales, reels, podcasts y material promocional.</p>
+                        <div class="service-content">
+                            <h4>Voice Over para Publicidad y Redes</h4>
+                            <p>Grabaciones de voz claras y expresivas para comerciales, reels, podcasts y material promocional que conecte con tu audiencia.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Servicio 3 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center fade-in">
-                        <div class="service-icon float-animation">
-                            <i class="fas fa-film"></i>
+                <!-- Servicio 3 - Layout horizontal -->
+                <div class="col-12">
+                    <div class="service-item fade-in">
+                        <div class="service-icon-container">
+                            <i class="fas fa-film service-new-icon"></i>
                         </div>
-                        <!-- Título y descripción del servicio 3 - Reemplazar -->
-                        <h4>Edición Básica de Video y Audio</h4>
-                        <p>Edición clara y funcional de video, ajustes de audio y sincronización de doblaje para proyectos accesibles y efectivos.</p>
+                        <div class="service-content">
+                            <h4>Edición de Video y Audio</h4>
+                            <p>Edición profesional de video, ajustes de audio y sincronización de doblaje para proyectos creativos y efectivos.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Servicio 4 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="service-card text-center fade-in">
-                        <div class="service-icon float-animation">
-                            <i class="fas fa-headphones"></i>
+                <!-- Servicio 4 - Layout horizontal inverso -->
+                <div class="col-12">
+                    <div class="service-item fade-in">
+                        <div class="service-icon-container">
+                            <i class="fas fa-headphones service-new-icon"></i>
                         </div>
-                        <!-- Título y descripción del servicio 4 - Reemplazar -->
-                        <h4>Producción Audiovisual Integral</h4>
-                        <p>Apoyo completo en proyectos creativos: desde la idea hasta el producto final, con calidad y estilo.</p>
+                        <div class="service-content">
+                            <h4>Producción Audiovisual Integral</h4>
+                            <p>Apoyo completo en proyectos creativos: desde la conceptualización hasta el producto final, con estilo y calidad profesional.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -346,8 +346,15 @@
                     <div class="social-links">
                         <!-- Enlaces sociales - Reemplazar URLs -->
                         <a href="TU_URL_DE_FACEBOOK" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                        <a href="https://wa.me/51960906717text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <!-- Email - se abre en Gmail en móvil o cliente de correo predeterminado -->
+                        <!-- Email - abre Gmail web directamente -->
+                        <a href="https://mail.google.com/mail/?view=cm&to=arekutennyson23@gmail.com" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/51960906717?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" class="social-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </div>

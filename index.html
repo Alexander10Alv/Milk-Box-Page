@@ -147,12 +147,14 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="video-card fade-in">
                         <div class="video-container">
-                            <!-- Video 1 - Reemplazar poster y source -->
                             <video class="w-100" 
-                                   poster="assets/images/thumbl/Sin título.png" 
-                                   controls 
-                                   playsinline 
-                                   preload="metadata"
+                                    poster="assets/images/thumbl/Sin título.png" 
+                                    controls 
+                                    playsinline 
+                                    preload="metadata"
+                                    autoplay
+                                    muted
+                                    loop
                                    controlslist="nodownload noremoteplayback"
                                    disablepictureinpicture>
                                 <source src="assets/videos/video1.mp4" type="video/mp4">
@@ -171,22 +173,24 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="video-card fade-in">
                         <div class="video-container">
-                            <!-- Video 2 - Reemplazar poster y source -->
                             <video class="w-100" 
-                                   poster="{{VIDEO_2_POSTER}}" 
-                                   controls 
-                                   playsinline 
-                                   preload="metadata"
-                                   controlslist="nodownload nofullscreen noremoteplaybook"
+                                    poster="{{VIDEO_2_POSTER}}" 
+                                    controls 
+                                    playsinline 
+                                    preload="metadata"
+                                    autoplay
+                                    muted
+                                    loop
+                                   controlslist="nodownload noremoteplayback"
                                    disablepictureinpicture>
-                                <source src="{{VIDEO_2_SRC}}" type="video/mp4">
+                                <source src="assets/videos/spot-publicitario.mp4" type="video/mp4">
                                 Tu navegador no soporta videos HTML5.
                             </video>
                         </div>
                         <div class="video-info">
                             <!-- Título y descripción del video 2 - Reemplazar -->
-                            <h4>{{VIDEO_2_TITLE}}</h4>
-                            <p>{{VIDEO_2_DESC}}</p>
+                            <h4>Spot Corporativo – Milk Box</h4>
+                            <p>Spot publicitario creado para presentar nuestros servicios de doblaje, locución y edición de audio.</p>
                         </div>
                     </div>
                 </div>
@@ -195,12 +199,14 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="video-card fade-in">
                         <div class="video-container">
-                            <!-- Video 3 - Reemplazar poster y source -->
                             <video class="w-100" 
-                                   poster="{{VIDEO_3_POSTER}}" 
-                                   controls 
-                                   playsinline 
-                                   preload="metadata"
+                                    poster="{{VIDEO_3_POSTER}}" 
+                                    controls 
+                                    playsinline 
+                                    preload="metadata"
+                                    autoplay
+                                    muted
+                                    loop
                                    controlslist="nodownload nofullscreen noremoteplaybook"
                                    disablepictureinpicture>
                                 <source src="{{VIDEO_3_SRC}}" type="video/mp4">
@@ -209,8 +215,8 @@
                         </div>
                         <div class="video-info">
                             <!-- Título y descripción del video 3 - Reemplazar -->
-                            <h4>{{VIDEO_3_TITLE}}</h4>
-                            <p>{{VIDEO_3_DESC}}</p>
+                            <h4>Tu Proyecto Aquí - ¡gratis!</h4>
+                            <p>Primer proyecto sin costo para completar nuestro portfolio. ¿Necesitas doblaje o edición? ¡Escríbenos!</p>
                         </div>
                     </div>
                 </div>
@@ -321,7 +327,7 @@
                             Facebook
                         </a>
                         <!-- Botón WhatsApp -->
-                        <a href="TU_NUMERO_DE_WHATSAPP" class="btn btn-whatsapp mb-3" target="_blank">
+                        <a href="https://wa.me/51960906717?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" class="btn btn-whatsapp mb-3" target="_blank">
                             <i class="fab fa-whatsapp me-2"></i>
                             WhatsApp
                         </a>

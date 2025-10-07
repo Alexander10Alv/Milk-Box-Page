@@ -845,56 +845,11 @@ window.addEventListener('unhandledrejection', function(event) {
     // CAMBIAR: Implementar con tu servicio de error tracking
 });
 
-// ==========================================================================
-// PARTÍCULAS DORADAS FLOTANTES
-// ==========================================================================
-
-/**
- * Crear partículas doradas que flotan por toda la página
- */
-function createGoldenParticles() {
-    const particleCount = 15;
-    
-    for (let i = 0; i < particleCount; i++) {
-        setTimeout(() => {
-            const particle = $('<div class="golden-particle"></div>');
-            const size = Math.random() * 6 + 4; // 4-10px
-            const startX = Math.random() * window.innerWidth;
-            const startY = window.innerHeight + 20;
-            const duration = Math.random() * 15 + 20; // 20-35 segundos
-            const delay = Math.random() * 5000;
-            
-            particle.css({
-                'position': 'fixed',
-                'width': size + 'px',
-                'height': size + 'px',
-                'background': 'radial-gradient(circle, #d4af37 0%, #ff7043 100%)',
-                'border-radius': '50%',
-                'left': startX + 'px',
-                'top': startY + 'px',
-                'z-index': '1',
-                'pointer-events': 'none',
-                'opacity': '0.7',
-                'animation': `goldenFloat ${duration}s ease-in-out ${delay}ms infinite`,
-                'box-shadow': '0 0 10px rgba(212, 175, 55, 0.5)'
-            });
-            
-            $('body').append(particle);
-            
-            // Remover después del ciclo completo
-            setTimeout(() => {
-                particle.remove();
-            }, duration * 1000 + delay);
-        }, i * 2000); // Escalonar creación
-    }
-}
 
 // Inicializar partículas doradas
 $(document).ready(function() {
-    createGoldenParticles();
+
     
-    // Renovar partículas cada 30 segundos
-    setInterval(createGoldenParticles, 30000);
 
     // ==========================================================================
     // PARTÍCULAS DECORATIVAS EN NAVBAR

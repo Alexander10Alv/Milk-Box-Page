@@ -2032,3 +2032,28 @@ video[poster] {
   animation: pingPong 6s ease-in-out infinite;
   transition: none;
 }
+
+/* Aumentar ancho del contenedor en pantallas extra grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1700px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2200px;
+    }
+}

@@ -1,0 +1,13 @@
+# Archivos de configuración con claves sensibles
+assets/js/config.js
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Carpetas de IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

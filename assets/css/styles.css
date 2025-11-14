@@ -2066,3 +2066,64 @@ video[poster] {
         max-width: 2200px;
     }
 }
+
+/* ==========================================================================
+   EFECTO DE BRILLO DIAGONAL EN "MILK BOX"
+   ========================================================================== */
+
+.hero-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: #1c2a35;
+}
+
+.hero-subtitle {
+  font-weight: 600;
+}
+
+.hero-title::before {
+  content: 'MILK BOX';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, 
+    transparent 0%, 
+    transparent 45%, 
+    rgba(255, 255, 255, 0.9) 50%, 
+    transparent 55%, 
+    transparent 100%
+  );
+  background-size: 350% 100%;
+  background-position: 300% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: milkboxShine 16s linear infinite;
+}
+
+@keyframes milkboxShine {
+  0% {
+    background-position: 300% 0;
+  }
+  5% {
+    background-position: 300% 0;
+  }
+  25% {
+    background-position: -200% 0;
+  }
+  45% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  75% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

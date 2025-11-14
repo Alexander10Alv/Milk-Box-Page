@@ -59,6 +59,7 @@ class MilkBoxChatbot {
     constructor() {
         this.conversationHistory = [];
         this.isFirstMessage = true;
+        this.lastUserMessage = '';
         this.init();
     }
 
@@ -178,6 +179,7 @@ class MilkBoxChatbot {
 
         if (!message) return;
 
+        this.lastUserMessage = message;
         this.addUserMessage(message);
         input.value = '';
 
@@ -295,8 +297,9 @@ class MilkBoxChatbot {
         // Convertir saltos de línea a <br>
         formatted = formatted.replace(/\n/g, '<br>');
         
-        const keywords = ['cotización', 'cotizacion', 'precio', 'costo', 'contacto', 'whatsapp', 'número', 'numero', 'hablar', 'humano'];
-        const shouldShowWhatsApp = keywords.some(keyword => message.toLowerCase().includes(keyword));
+        // Buscar palabras clave en el mensaje del USUARIO, no en la respuesta del bot
+        const keywords = ['cotización', 'cotizacion', 'precio', 'costo', 'contacto', 'whatsapp', 'número', 'numero', 'hablar', 'humano', 'persona', 'equipo'];
+        const shouldShowWhatsApp = keywords.some(keyword => this.lastUserMessage.toLowerCase().includes(keyword));
         
         if (shouldShowWhatsApp) {
             formatted += `<br><br><a href="https://wa.me/51960906717?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios" target="_blank" class="whatsapp-button">

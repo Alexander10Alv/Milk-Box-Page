@@ -1,8 +1,7 @@
 // Chatbot con Groq AI - Milk Box Studio
-// Las credenciales se cargan desde config.js
-const GROQ_API_KEY = CONFIG.GROQ_API_KEY;
-const GROQ_API_URL = CONFIG.GROQ_API_URL;
-const GROQ_MODEL = CONFIG.GROQ_MODEL;
+const GROQ_API_KEY = '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';
+const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_MODEL = 'openai/gpt-oss-120b';
 
 // Contexto de la página para la IA
 const PAGE_CONTEXT = `

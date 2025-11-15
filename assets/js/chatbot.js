@@ -298,7 +298,7 @@ class MilkBoxChatbot {
         formatted = formatted.replace(/\n/g, '<br>');
         
         // Buscar palabras clave en el mensaje del USUARIO, no en la respuesta del bot
-        const keywords = ['cotización', 'cotizacion', 'precio', 'costo', 'contacto', 'whatsapp', 'número', 'numero', 'hablar', 'humano', 'persona', 'equipo'];
+        const keywords = ['cotización', 'cotizacion', 'precio', 'costo', 'contacto', 'whatsapp', 'número', 'numero', 'hablar', 'humano', 'persona', 'equipo', 'contratar', 'contratación', 'contratacion', 'contraten', 'contrato', 'servicio', 'servicios'];
         const shouldShowWhatsApp = keywords.some(keyword => this.lastUserMessage.toLowerCase().includes(keyword));
         
         if (shouldShowWhatsApp) {

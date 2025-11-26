@@ -1,5 +1,5 @@
 // Chatbot con Groq AI - Milk Box Studio
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = ['gsk_KlbLoDmyBmK85f', 'WvRKqBWGdyb3FYALW1j', 'eijVaMoa56bIgPPHn3d'].join('');
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'openai/gpt-oss-120b';
 

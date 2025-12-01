@@ -1,6 +1,6 @@
 // Chatbot con Groq AI - Milk Box Studio
-const GROQ_API_KEY = ['gsk_KlbLoDmyBmK85f', 'WvRKqBWGdyb3FYALW1j', 'eijVaMoa56bIgPPHn3d'].join('');
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const USE_WORKER = true;
+const WORKER_URL = 'https://milkbox-chatbot-worker.arekutennyson23.workers.dev';
 const GROQ_MODEL = 'openai/gpt-oss-120b';
 
 // Contexto de la página para la IA
@@ -13,9 +13,14 @@ TU PERSONALIDAD:
 - Sé conversacional y natural, como si estuvieras chateando con un amigo
 - Muestra entusiasmo genuino por ayudar
 - Mantén las respuestas BREVES y directas (máximo 5-6 líneas)
-- Usa expresiones coloquiales del español latino como "uff", "jaja", "dale", "buenísimo"
 - NO uses asteriscos para énfasis, solo texto normal
 - Sé más relajado y menos formal, como un amigo que recomienda algo
+
+IDIOMA:
+- DETECTA el idioma en el que te escriben y RESPONDE EN ESE MISMO IDIOMA
+- Si te escriben en inglés, responde en inglés
+- Si te escriben en español, responde en español y usa expresiones coloquiales como "uff", "jaja", "dale", "buenísimo"
+- Adapta tu tono al idioma pero mantén tu personalidad amigable
 
 INFORMACIÓN DEL NEGOCIO:
 Somos MILK BOX Studio, un estudio creativo especializado en:
@@ -243,12 +248,15 @@ class MilkBoxChatbot {
             stream: false
         };
 
-        const response = await fetch(GROQ_API_URL, {
+        // Decidir si usar Worker o API directa según el modo
+        const apiUrl = USE_WORKER ? WORKER_URL : GROQ_API_URL;
+        const headers = USE_WORKER 
+            ? { 'Content-Type': 'application/json' }
+            : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GROQ_API_KEY}` };
+
+        const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${GROQ_API_KEY}`
-            },
+            headers: headers,
             body: JSON.stringify(requestBody)
         });
 

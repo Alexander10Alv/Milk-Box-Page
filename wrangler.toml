@@ -1,0 +1,6 @@
+name = "milkbox-chatbot-worker"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Variables de entorno (la API key se configura en el dashboard de Cloudflare)
+# No pongas la API key aquí, se configura en: Workers > Settings > Variables
